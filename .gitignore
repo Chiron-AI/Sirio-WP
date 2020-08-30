@@ -1,0 +1,11 @@
+# Git Ignore for Plugin
+# -----------------------------------------------------------------------------
+
+# OS Ignores
+# -------------------------------------
+.DS_Store
+bower_components
+node_modules
+vendor
+composer.lock
+package-lock.json

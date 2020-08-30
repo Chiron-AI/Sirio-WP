@@ -1,0 +1,19 @@
+{
+	"autoload": {
+        "classmap": [
+            "php/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6",
+		"stevegrunwell/wp-enforcer": "dev-develop"
+    },
+	"scripts": {
+		"post-install-cmd": [
+			"wp-enforcer"
+		],
+		"post-update-cmd": [
+			"wp-enforcer"
+		]
+	}
+}
