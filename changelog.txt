@@ -1,0 +1,4 @@
+*** Sirio Module Changelog ***
+
+2020-08-29 - version 0.0.1
+* Initial release
