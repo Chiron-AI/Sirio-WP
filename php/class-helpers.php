@@ -2,7 +2,7 @@
 /**
  * Helpers Class.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -19,7 +19,7 @@ require_once 'traits/trait-render-view.php';
  *
  * Helper class containing useful static methods.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */

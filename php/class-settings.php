@@ -2,7 +2,7 @@
 /**
  * Settings Class.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -12,7 +12,7 @@ namespace Chiron_Sirio;
 /**
  * Class Settings
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -22,8 +22,7 @@ class Settings {
 	 * Path to the root plugin file.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_root;
 
@@ -31,8 +30,7 @@ class Settings {
 	 * Plugin name.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_name;
 
@@ -40,8 +38,7 @@ class Settings {
 	 * Plugin slug.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_slug;
 
@@ -49,15 +46,14 @@ class Settings {
 	 * Plugin prefix.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_prefix;
 
 	/**
 	 * Constructor.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function __construct() {
 		$this->plugin_root   = PLUGIN_NAME_ROOT;
@@ -69,11 +65,11 @@ class Settings {
 	/**
 	 * Do Work
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function run() {
-		// @codingStandardsIgnoreStart
-        //add_action( 'admin_init', array( $this, 'init_settings_page' ) );
+        // @codingStandardsIgnoreStart
+        add_action( 'admin_init', array( $this, 'init_settings_page' ) );
         add_action( 'admin_menu', array( $this, 'add_settings_page' ) );
         // Add WooCommerce Navigation Bar
         add_action('admin_menu', array( $this, 'add_navigation_bar'));
@@ -89,7 +85,7 @@ class Settings {
 	/**
 	 * Add the settings page.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function add_settings_page() {
 
@@ -105,8 +101,8 @@ class Settings {
 	}
 
     /**
-     * Include the new Navigation Bar the Admin page.
-     */
+    * Include the new Navigation Bar the Admin page.
+    */
     public function add_navigation_bar() {
 
 
@@ -124,42 +120,42 @@ class Settings {
 	/**
 	 * Render the settings page.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function render_settings_page() {
 		?>
         <div class="wrap">
             <h2><?php esc_html_e( 'Sirio', 'chiron-sirio' ); ?></h2>
-
             <iframe src="https://crm.chiron.ai/shop/product/sirio-trial-22" title="sirio" width="100%" height="800"></iframe>
         </div>
-	<?php
-	}
+    <?php
+    }
 
 	/**
 	 * Add 'Settings' action on installed plugin list.
 	 *
 	 * @param array $links An array of plugin action links.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function add_settings_link( $links ) {
         $new_item2 = '<a target="_blank" href="https://www.chiron.ai" target="_blank">by <span style="background-color: #4067af; color: white; font-weight: bold; padding: 1px 8px;">Chiron</span></a>';
         $new_item1 = '<a href="' . admin_url('admin.php?page=' . $this->plugin_prefix ) . '">' . esc_html__( 'Settings', 'chiron-sirio' ) . '</a>';
         array_unshift($links, $new_item2, $new_item1);
-
 		return $links;
 	}
 
     /**
-     * check if current user can view options pages/ save plugin options
-     */
+    * Check if current user can view options pages/ save plugin options
+    */
     public function option_page_capability() {
         return $this->get_allowed_capability();
     }
-
-
-    function get_allowed_capability() {
+	
+    /**
+    * Get allowe capability
+    */
+    public function get_allowed_capability() {
         if (current_user_can('manage_woocommerce')) {
             return 'manage_woocommerce';
         }

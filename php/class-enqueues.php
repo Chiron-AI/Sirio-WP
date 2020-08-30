@@ -2,7 +2,7 @@
 /**
  * Enqueues Class.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -14,7 +14,7 @@ namespace Chiron_Sirio;
  *
  * Enqueues JS and CSS dependencies.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -24,8 +24,7 @@ class Enqueues {
 	 * Path to the root plugin file.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_root;
 
@@ -33,8 +32,7 @@ class Enqueues {
 	 * Plugin name.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_name;
 
@@ -42,8 +40,7 @@ class Enqueues {
 	 * Plugin slug.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_slug;
 
@@ -51,8 +48,7 @@ class Enqueues {
 	 * Plugin prefix.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_prefix;
 
@@ -60,8 +56,7 @@ class Enqueues {
 	 * Debug mode status
 	 *
 	 * @var     bool
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $debug_mode;
 
@@ -69,15 +64,14 @@ class Enqueues {
 	 * Asset Suffix
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $asset_suffix;
 
 	/**
 	 * Constructor.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function __construct() {
 		$this->plugin_root   = PLUGIN_NAME_ROOT;
@@ -94,7 +88,7 @@ class Enqueues {
 	/**
 	 * Unleash Hell.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function run() {
 		// Enqueue Front-end JS.
@@ -104,7 +98,7 @@ class Enqueues {
 	/**
 	 * Enqueue Public Scripts.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function public_enqueue_scripts() {
 

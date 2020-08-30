@@ -2,7 +2,7 @@
 /**
  * Trait Render_View
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -12,7 +12,7 @@ namespace Chiron_Sirio;
 /**
  * Helper_Render_View.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */

@@ -2,7 +2,7 @@
 /**
  * Notices Class.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -14,7 +14,7 @@ namespace Chiron_Sirio;
  *
  * Generates various plugin notices, including on activation.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -24,8 +24,7 @@ class Notices {
 	 * Path to the root plugin file.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_root;
 
@@ -33,8 +32,7 @@ class Notices {
 	 * Plugin name.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_name;
 
@@ -42,8 +40,7 @@ class Notices {
 	 * Plugin slug.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_slug;
 
@@ -51,8 +48,7 @@ class Notices {
 	 * Plugin prefix.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_prefix;
 
@@ -60,15 +56,14 @@ class Notices {
 	 * Minimum PHP Version.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $min_php_ver;
 
 	/**
 	 * Constructor
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function __construct() {
 		$this->plugin_root   = PLUGIN_NAME_ROOT;
@@ -81,7 +76,7 @@ class Notices {
 	/**
 	 * Unleash Hell.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function run() {
 		// Hook in specific functionality such as adding notices etc.
@@ -94,7 +89,7 @@ class Notices {
 	/**
 	 * Display notice(s) on plugin activation.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function display_activation_notices() {
 
@@ -131,7 +126,7 @@ class Notices {
 	/**
 	 * Display warning if running an unsupported version of PHP
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function display_php_version_warning_notice() {
 

@@ -2,7 +2,7 @@
 /**
  * Uninstaller Class.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  *
@@ -25,7 +25,7 @@ namespace Chiron_Sirio;
  * - Repeat with other user roles. Best directly by using the links/query string parameters.
  * - Repeat things for multisite. Once for a single site in the network, once sitewide.
  *
- * @since       0.1.0
+ * @since       0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -35,8 +35,7 @@ class Uninstaller {
 	 * Path to the root plugin file.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_root;
 
@@ -44,8 +43,7 @@ class Uninstaller {
 	 * Plugin name.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_name;
 
@@ -53,8 +51,7 @@ class Uninstaller {
 	 * Plugin slug.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_slug;
 
@@ -62,15 +59,14 @@ class Uninstaller {
 	 * Plugin prefix.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_prefix;
 
 	/**
 	 * Constructor.
 	 *
-	 * @since       0.1.0
+	 * @since       0.0.1
 	 */
 	public function __construct() {
 		$this->plugin_root   = PLUGIN_NAME_ROOT;
@@ -85,7 +81,7 @@ class Uninstaller {
 	 * Make sure you check defined( 'WP_UNINSTALL_PLUGIN' ) before
 	 * executing any code; to check if WordPress is in un-install mode.
 	 *
-	 * @since       0.1.0
+	 * @since       0.0.1
 	 */
 	public function run() {
 

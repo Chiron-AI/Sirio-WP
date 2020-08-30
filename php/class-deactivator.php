@@ -2,7 +2,7 @@
 /**
  * Deactivator Class.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -14,7 +14,7 @@ namespace Chiron_Sirio;
  *
  * Carry out actions when the plugin is deactivated.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -24,8 +24,7 @@ class Deactivator {
 	 * Path to the root plugin file.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_root;
 
@@ -33,8 +32,7 @@ class Deactivator {
 	 * Plugin name.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_name;
 
@@ -42,8 +40,7 @@ class Deactivator {
 	 * Plugin slug.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_slug;
 
@@ -51,15 +48,14 @@ class Deactivator {
 	 * Plugin prefix.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_prefix;
 
 	/**
 	 * Constructor.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function __construct() {
 		$this->plugin_root   = PLUGIN_NAME_ROOT;
@@ -71,7 +67,7 @@ class Deactivator {
 	/**
 	 * Unleash Hell.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function run() {
 		// Register the deactivation callback.
@@ -81,7 +77,7 @@ class Deactivator {
 	/**
 	 * Deactivate the plugin.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function deactivate() {
 		// Set a transient to confirm activation.

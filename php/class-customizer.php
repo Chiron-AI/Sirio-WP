@@ -2,7 +2,7 @@
 /**
  * Customizer Class.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  *
@@ -16,7 +16,7 @@ namespace Chiron_Sirio;
  *
  * Register Customizer settings, panels, section and controls.
  *
- * @since   0.1.0
+ * @since   0.0.1
  *
  * @package Chiron_Sirio
  */
@@ -26,8 +26,7 @@ class Customizer {
 	 * Path to the root plugin file.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_root;
 
@@ -35,8 +34,7 @@ class Customizer {
 	 * Plugin name.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_name;
 
@@ -44,8 +42,7 @@ class Customizer {
 	 * Plugin slug.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_slug;
 
@@ -53,15 +50,14 @@ class Customizer {
 	 * Plugin prefix.
 	 *
 	 * @var     string
-	 * @access  private
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	private $plugin_prefix;
 
 	/**
 	 * Constructor.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function __construct() {
 		$this->plugin_root   = PLUGIN_NAME_ROOT;
@@ -73,7 +69,7 @@ class Customizer {
 	/**
 	 * Unleash Hell.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function run() {
 		// Handle Settings, Panels, Sections and Controls.
@@ -88,7 +84,7 @@ class Customizer {
 	 *
 	 * @param   WP_Customize $wp_customize WordPress Customizer object.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function customizer_settings( $wp_customize ) {
 
@@ -99,7 +95,7 @@ class Customizer {
 	 *
 	 * @param   WP_Customize $wp_customize WordPress Customizer object.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function customizer_panels( $wp_customize ) {
 
@@ -110,7 +106,7 @@ class Customizer {
 	 *
 	 * @param   WP_Customize $wp_customize WordPress Customizer object.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function customizer_sections( $wp_customize ) {
 
@@ -121,7 +117,7 @@ class Customizer {
 	 *
 	 * @param   WP_Customize $wp_customize WordPress Customizer object.
 	 *
-	 * @since   0.1.0
+	 * @since   0.0.1
 	 */
 	public function customizer_controls( $wp_customize ) {
 
