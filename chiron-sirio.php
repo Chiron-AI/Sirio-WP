@@ -18,8 +18,10 @@
  * License:      GPL-3.0+
  * License URI:  http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:  chiron-sirio
- * Domain Path:  /languages
+ * Woo: 6547407:dfd97055a8d3ea627a6fe0afe700324b
  */
+
+
 
 /**
  * Abort if this file is called directly.
