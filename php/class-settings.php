@@ -124,7 +124,7 @@ class Settings {
 		?>
 		<div class="wrap">
 			<h2><?php esc_html_e( 'Sirio', 'chiron-sirio' ); ?></h2>
-			<iframe src="https://crm.chiron.ai/shop/product/sirio-trial-22" title="sirio" width="100%" height="800"></iframe>
+			<!--<iframe src="https://crm.chiron.ai/shop/product/sirio-trial-22" title="sirio" width="100%" height="800"></iframe>-->
 		</div>
 		<?php
 	}
