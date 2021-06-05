@@ -263,29 +263,16 @@
 		private function appendProductSearchJS() {
 			$locale = explode('-', get_bloginfo('language'))[0];
 			$page = (get_query_var('paged')) ? get_query_var('paged') : 1;;
-			$current_category = get_queried_object();
-			$max_product_count = count($products);
 			$limit = get_option( 'posts_per_page' );
 			$products_count = $limit;
-			
 			$currency_code = get_woocommerce_currency();
-			$query = new ProductSearchQuery();
-			$search_string = Tools::getValue('s');
-			$query->setSortOrder(new SortOrder('product', 'position', 'desc'))
-				->setSearchString($search_string);
-			$provider = $this->getProductSearchProviderFromModules($query);
-			
-			// if no module wants to do the query, then the core feature is used
-			if (null === $provider) {
-				$provider = $this->getDefaultProductSearchProvider();
+			$search_string = get_search_query();
+			$max_product_count=0;
+			while(have_posts()){
+				the_post();
+				$max_product_count++;
 			}
-			// the search provider will need a context (language, shop...) to do its job
-			$context = $this->getProductSearchContext();
-			$result = $provider->runQuery(
-				$context,
-				$query
-			);
-			$max_product_count = $result->getTotalProductsCount();
+			
 			if($max_product_count % $limit > 0){
 				$pages = (int)($max_product_count / $limit) + 1 ;
 			}
