@@ -69,7 +69,7 @@ class Settings {
 	 */
 	public function run() {
 		// @codingStandardsIgnoreStart
-		add_action( 'admin_init', array( $this, 'init_settings_page' ) );
+		//add_action( 'admin_init', array( $this, 'init_settings_page' ) );
 		add_action( 'admin_menu', array( $this, 'add_settings_page' ) );
 		// Add WooCommerce Navigation Bar
 		add_action('admin_menu', array( $this, 'add_navigation_bar'));
@@ -116,17 +116,36 @@ class Settings {
 	}
 	
 	/**
+	 * Setta i campi per il form di configurazione,
+	 * se attivato recurring viene sovrascritte dalla classe figlia
+	 */
+	public function init_form_fields()
+	{
+		$this->form_fields = array(
+			
+			'enabled' => array(
+				'title' => __('Enable/Disable', 'sirio'),
+				'type' => 'checkbox',
+				'label' => __("Enable Sirio Module.", 'woocommerce-sirio'),
+				'default' => 'no'
+			),
+			
+		);
+	}
+	
+	/**
 	* Render the settings page.
 	*
 	* @since   0.0.1
 	*/
-	public function render_settings_page() {
+	public function init_settings_page() {
 		?>
 		<div class="wrap">
 			<h2><?php esc_html_e( 'Sirio', 'chiron-sirio' ); ?></h2>
-			<!--<iframe src="https://crm.chiron.ai/shop/product/sirio-trial-22" title="sirio" width="100%" height="800"></iframe>-->
 		</div>
+  
 		<?php
+       // $this->init_form_fields();
 	}
 
 	/**

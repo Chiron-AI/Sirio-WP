@@ -50,3 +50,4 @@ There is no specific roadmap at this time.
 ## [Changelog](#changelog)
 
 **0.0.1** - *29.08.2020* - First version of module.
+**0.1.0** - *06.04.2021* - - Inject headers and SirioCustomObject.

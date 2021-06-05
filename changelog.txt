@@ -2,3 +2,7 @@
 
 2020-08-29 - version 0.0.1
 * Initial release
+
+2021-06-04 - version 0.1.0
+* Inject headers
+* Inject SirioCustomObject

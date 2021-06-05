@@ -11,7 +11,7 @@
  * Plugin Name:  Sirio
  * Plugin URI:   https://github.com/Chiron-AI/Sirio-WP
  * Description:  Sirio wordpress module by Chiron.
- * Version:      0.0.1
+ * Version:      0.1.0
  * Contributors: chiron
  * Author:       Chiron <sirio@chiron.ai>
  * Author URI:   https://chiron.ai/sirio
