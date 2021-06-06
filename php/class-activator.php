@@ -72,6 +72,7 @@ class Activator {
 	public function run() {
 		// Register the activation callback.
 		register_activation_hook( $this->plugin_root, array( $this, 'activate' ) );
+		
 	}
 
 	/**
@@ -83,4 +84,6 @@ class Activator {
 		// Set a transient to confirm activation.
 		set_transient( $this->plugin_prefix . '_activated', true, 10 );
 	}
+
+	
 }

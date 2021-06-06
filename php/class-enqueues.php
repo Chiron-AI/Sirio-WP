@@ -93,6 +93,65 @@
 		public function run() {
 			// Enqueue Front-end JS.
 			add_action( 'wp_enqueue_scripts', array( $this, 'public_enqueue_scripts' ), 10 );
+			//add_action( 'woocommerce_cart_updated', array( $this, 'on_action_cart_updated'), 20, 1 );
+			//add_action( 'woocommerce_cart_contents_changed', array( $this, 'on_action_cart_updated'), 20, 1 );
+			add_action( 'woocommerce_add_to_cart', array( $this, 'on_action_cart_updated'), 20, 1 );
+			add_action( 'oocommerce_after_cart_item_quantity_update', array( $this, 'on_action_cart_updated'), 20, 1 );
+			add_action( 'woocommerce_cart_item_removed', array( $this, 'on_action_cart_updated'), 20, 1 );
+			add_action( 'woocommerce_calculated_shipping', array( $this, 'on_action_cart_updated'), 20, 1 );
+			add_action( 'woocommerce_cart_calculate_shipping_address', array( $this, 'on_action_cart_updated'), 20, 1 );
+			add_action( 'woocommerce_removed_coupon', array( $this, 'on_action_cart_updated'), 20, 1 );
+			add_action( 'woocommerce_applied_coupon', array( $this, 'on_action_cart_updated'), 20, 1 );
+		}
+		
+		public function on_action_cart_updated( $cart_updated ){
+			$applied_coupons = WC()->cart->get_applied_coupons();
+			$subtotal        = number_format((float)WC()->cart->get_subtotal() + (float)WC()->cart->get_subtotal_tax(),2);
+			$discounted       = WC()->cart->coupon_discount_totals;
+			$shipping = number_format((float)WC()->cart->get_shipping_total(),2);
+			$discount = (float)0;
+			foreach(array_values($discounted) as $item){
+				$discount+=(float)$item[0];
+			}
+			$discount = number_format((float)0,2);
+			$total = number_format((float)WC()->cart->get_total('edit'),2);
+			
+			//TODO debug
+			$coupon=array();
+			foreach ($applied_coupons as $coupon) {
+				$coupon[] = $coupon->code;
+			}
+			$coupon = implode(",", $coupon);
+
+			/*
+					quando questa funzione viene chiamata:
+					metto in cart_new il carrello attuale
+			*/
+			$products = array();
+			foreach ( WC()->cart->get_cart() as $cart_item ) {
+				$sku = $cart_item['data']->get_slug();
+				$item_name = $cart_item['data']->get_title();
+				$quantity = $cart_item['quantity'];
+				$price = $cart_item['data']->get_price();
+				$regular_price      = number_format((float)$cart_item['data']->get_regular_price(),2);
+				$sale_price         = number_format((float)$cart_item['data']->get_sale_price(),2);
+				$product = array(
+					"sku" => $sku,
+					"price" => $price,
+					"qty" => $quantity,
+					"name" => $item_name,
+					"discount_amount" => number_format((float)$sale_price > 0?(float)$regular_price - (float)$sale_price:(float)0, 2),
+				);
+				$products[]=$product;
+			}
+
+			$cart_full = '{"cart_total":'.$total.', "cart_subtotal":'.$subtotal.', "shipping":'.$shipping.', "coupon_code":"'.$coupon.'", "discount_amount":'.$discount.', "cart_products":'.json_encode($products).'}';
+			//print_r($cart_full);//exit;
+			if(isset($_COOKIE['cart_new'])){
+				@setcookie('cart_new', "", 1);
+			}
+			@setcookie('cart_new', base64_encode($cart_full), time() + (86400 * 30), "/");
+			return $cart_updated;
 		}
 		
 		/**
